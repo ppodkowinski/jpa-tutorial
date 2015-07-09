@@ -1,8 +1,16 @@
 package com.acme.order.customer;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
-public interface CustomerTypeRepository extends CrudRepository<CustomerType, Long> {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
+
+
+
+public interface CustomerTypeRepository extends JpaRepository<CustomerType, Long> {
+	
+
+//List<Customer> findByCustomerTypeType(@Param("type") String type); 
 }
 
 

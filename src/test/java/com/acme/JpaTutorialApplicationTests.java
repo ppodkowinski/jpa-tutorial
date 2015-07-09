@@ -17,8 +17,11 @@ import com.acme.order.pizza.PizzaOrderService;
 import com.acme.order.pizza.PizzaType;
 import com.google.common.collect.Lists;
 
+import lombok.Builder;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = JpaTutorialApplication.class)
+
 public class JpaTutorialApplicationTests {
 @Autowired
 private CustomerRepository customerRespository;
@@ -47,5 +50,14 @@ private CustomerTypeRepository customerTypeRepository;
 		pizzaOrderService.createOrder(customer1, PizzaType.BIG);
 		
 	
+	}
+	@Test
+	public void findIndividualsTest(){
+		givenIndividualCusomer();
+	}
+	private void givenIndividualCusomer() {
+		CustomerType customerType = CustomerType.builder().type("INDIVIDUAL").build();
+		
+		
 	}
 }
